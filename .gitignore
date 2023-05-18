@@ -1,0 +1,7 @@
+/node_modules
+.idea
+src/reportWebVitals.ts
+
+src/react-app-env.d.ts
+
+public/manifest.json
