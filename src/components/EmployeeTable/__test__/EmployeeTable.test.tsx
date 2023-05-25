@@ -1,23 +1,23 @@
 import React from 'react';
 import {render, screen, cleanup} from '@testing-library/react';
 import {EmployeeTable} from "../EmployeeTable";
-import {EmployeeModel} from "../../../models/EmployeeModel";
+import {IEmployeeModel} from "../../../models/EmployeeModel";
 
 describe('EmployeeTable', (): void => {
 
-    let employeesProps: EmployeeModel[] = [];
+    let employeesProps: IEmployeeModel[] = [];
 
     beforeEach((): void => {
-        const employee: EmployeeModel =
-            new EmployeeModel(
-                "Test_User",
-                "M",
-                "3 Fake Street",
-                "M1",
-                5,
-                "Tech",
-                23000.0,
-                "test2test.com");
+        const employee: IEmployeeModel = {
+            name: "Test_User",
+            gender: "M",
+            address: "3 Fake Street",
+            postcode: "M1",
+            department: "Tech",
+            salary: 23000.0,
+            email: "test2test.com",
+            employeeNumber: 5
+        }
 
         employeesProps.push(employee);
     });

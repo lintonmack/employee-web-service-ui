@@ -1,8 +1,8 @@
 import React from "react";
-import {EmployeeModel} from "../../models/EmployeeModel";
+import {IEmployeeModel} from "../../models/EmployeeModel";
 import {EmployeeTableData} from "../EmployeeTableData/EmployeeTableData";
 
-export const EmployeeTableRow: React.FC<{employee: EmployeeModel}> = (props) => {
+export const EmployeeTableRow: React.FC<{employee: IEmployeeModel}> = (props) => {
     return (
         <tr key={props.employee.employeeNumber}>
             <EmployeeTableData employeeAttribute={props.employee.employeeNumber.toString()} />

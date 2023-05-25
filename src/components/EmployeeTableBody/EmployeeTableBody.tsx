@@ -1,8 +1,8 @@
-import {EmployeeModel} from "../../models/EmployeeModel";
+import {IEmployeeModel} from "../../models/EmployeeModel";
 import React from "react";
 import {EmployeeTableRow} from "../EmployeeTableRow/EmployeeTableRow";
 
-export const EmployeeTableBody: React.FC<{employees: EmployeeModel[]}> = (props) => {
+export const EmployeeTableBody: React.FC<{employees: IEmployeeModel[]}> = (props) => {
     return (
         <tbody role="tbody" className="divide-y divide-gray-200">
         {

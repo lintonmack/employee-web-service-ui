@@ -1,22 +1,22 @@
 import React from 'react';
 import {render, screen, cleanup} from '@testing-library/react';
 import {EmployeeTableRow} from "../EmployeeTableRow";
-import {EmployeeModel} from "../../../models/EmployeeModel";
+import {IEmployeeModel} from "../../../models/EmployeeModel";
 
 
 // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/cell_role
 describe("Employee Table Row", (): void => {
 
-    let employee: EmployeeModel =
-        new EmployeeModel(
-            "Test_User",
-            "M",
-            "3 Fake Street",
-            "M1",
-            5,
-            "Tech",
-            23000.0,
-            "test2test.com");
+    const employee: IEmployeeModel = {
+        name: "Test_User",
+        gender: "M",
+        address: "3 Fake Street",
+        postcode: "M1",
+        department: "Tech",
+        salary: 23000.0,
+        email: "test2test.com",
+        employeeNumber: 5
+    }
 
     afterEach((): void => {
         cleanup();

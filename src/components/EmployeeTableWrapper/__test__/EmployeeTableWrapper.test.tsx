@@ -2,7 +2,7 @@ import React from 'react';
 import {render, screen} from '@testing-library/react';
 import {EmployeeTableWrapper} from "../EmployeeTableWrapper";
 import {jest} from '@jest/globals';
-import {EmployeeModel} from "../../../models/EmployeeModel";
+import {IEmployeeModel} from "../../../models/EmployeeModel";
 
 
 jest.mock('../../../services/EmployeeApiService')
@@ -10,19 +10,20 @@ import {getAllEmployees} from "../../../services/EmployeeApiService";
 
 const mockedGetEmployees = getAllEmployees as jest.Mock;
 
-const mockEmployees: EmployeeModel[] = [
-    new EmployeeModel(
-        "Test_User",
-        "Male",
-        "3 Fake Street",
-        "M1",
-        5,
-        "Tech",
-        23000,
-        "test2test.com"
-    )
-];
+const mockEmployees: IEmployeeModel[] = [];
 
+const employee: IEmployeeModel = {
+    name: "Test_User",
+    gender: "Male",
+    address: "3 Fake Street",
+    postcode: "M1",
+    department: "Tech",
+    salary: 23000,
+    email: "test2test.com",
+    employeeNumber: 5
+}
+
+mockEmployees.push(employee)
 
 describe("EmployeeTableWrapper", () => {
     it("should fetch employee data and update the employees state", async function () {

@@ -1,9 +1,9 @@
-import {EmployeeModel} from "../../models/EmployeeModel";
+import {IEmployeeModel} from "../../models/EmployeeModel";
 import React from "react";
 import {EmployeeTableHeader} from "../EmployeeTableHeader/EmployeeTableHeader";
 import {EmployeeTableBody} from "../EmployeeTableBody/EmployeeTableBody";
 
-export const EmployeeTable: React.FC<{ employees: EmployeeModel[] }> = (props) => {
+export const EmployeeTable: React.FC<{ employees: IEmployeeModel[] }> = (props) => {
     return (
         <div className="px-4 sm:px-6 lg:px-8">
             {/*<div className="sm:flex sm:items-center">*/}

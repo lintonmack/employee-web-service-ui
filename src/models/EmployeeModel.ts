@@ -1,4 +1,16 @@
-export class EmployeeModel {
+
+export interface IEmployeeModel {
+    name: string;
+    gender: string;
+    address: string;
+    postcode: string;
+    employeeNumber: number;
+    department: string;
+    salary: number;
+    email: string;
+}
+
+export class EmployeeModel implements IEmployeeModel {
     private _name: string;
     private _gender: string;
     private _address: string;
@@ -8,17 +20,16 @@ export class EmployeeModel {
     private _salary: number;
     private _email: string;
 
-    constructor(name: string, gender: string, address: string, postcode: string, employeeNumber: number, department: string, salary: number, email: string) {
-        this._name = name;
-        this._gender = gender;
-        this._address = address;
-        this._postcode = postcode;
-        this._employeeNumber = employeeNumber;
-        this._department = department;
-        this._salary = salary;
-        this._email = email;
+    constructor(employeeModel?: IEmployeeModel) {
+        this._name = employeeModel?.name ?? "";
+        this._gender = employeeModel?.gender ?? "";
+        this._address = employeeModel?.address ?? "";
+        this._postcode = employeeModel?.postcode ?? "";
+        this._employeeNumber = employeeModel?.employeeNumber ?? 0;
+        this._department = employeeModel?.department ?? "";
+        this._salary = employeeModel?.salary ?? 0;
+        this._email = employeeModel?.email ?? "";
     }
-
 
     get name(): string {
         return this._name;
