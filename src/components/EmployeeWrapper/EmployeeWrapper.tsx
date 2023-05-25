@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {IEmployeeModel} from "../../models/EmployeeModel";
 import {getEmployeeById} from "../../services/EmployeeApiService";
+import {EmployeeView} from "../EmployeeView/EmployeeView";
 
 
 export const EmployeeWrapper: React.FC<{}> = (props) => {
@@ -16,13 +17,16 @@ export const EmployeeWrapper: React.FC<{}> = (props) => {
         employeeNumber: 0
     });
 
-    const queryParams = new URLSearchParams(window.location.search)
-    const id = queryParams.get("id")
     // const [isLoading, setIsLoading] = useState<boolean>(true);
     // const [httpError, setHttpError] = useState(null);
 
-    React.useEffect((): void => {
+    const queryParams = new URLSearchParams(window.location.search)
+    const id = queryParams.get("id")
 
+    // ToDo redirect if query string is not valid
+
+
+    React.useEffect((): void => {
             getEmployeeById(id)
                 .then((response: IEmployeeModel): void => {
                     setEmployee(response)
@@ -37,7 +41,7 @@ export const EmployeeWrapper: React.FC<{}> = (props) => {
     if (employee.employeeNumber !== 0) {
         return (
             <div>
-                {employee.name}
+                <EmployeeView employee={employee} editMode={false} />
             </div>
         )
     }
