@@ -4,7 +4,7 @@ import {EmployeeTableData} from "../EmployeeTableData/EmployeeTableData";
 
 export const EmployeeTableRow: React.FC<{employee: IEmployeeModel}> = (props) => {
     return (
-        <tr key={props.employee.employeeNumber}>
+        <tr key={props.employee.employeeNumber} data-testid="employee-record">
             <EmployeeTableData employeeAttribute={props.employee.employeeNumber.toString()} />
             <EmployeeTableData employeeAttribute={props.employee.name} />
             <EmployeeTableData employeeAttribute={props.employee.email} />
