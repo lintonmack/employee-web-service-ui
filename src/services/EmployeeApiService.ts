@@ -43,3 +43,8 @@ export async function getEmployeeById(id): Promise<IEmployeeModel> {
 
     return employee;
 }
+
+export function getQueryStringParam() {
+    const queryParams = new URLSearchParams(window.location.search)
+    return queryParams.get("id");
+}
