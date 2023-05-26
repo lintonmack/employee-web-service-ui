@@ -1,4 +1,4 @@
-import {EmployeeModel, IEmployeeModel} from "../models/EmployeeModel";
+import {IEmployeeModel} from "../models/EmployeeModel";
 
 export async function getAllEmployees(): Promise<IEmployeeModel[]> {
     const baseUrl: string = "http://localhost:8080/employees";
@@ -41,17 +41,5 @@ export async function getEmployeeById(id): Promise<IEmployeeModel> {
         employeeNumber: responseJson.employeeNumber
     }
 
-    console.log('emp', employee)
-
     return employee;
-    // return new EmployeeModel(
-    //     responseJson.name,
-    //     responseJson.gender,
-    //     responseJson.address,
-    //     responseJson.postcode,
-    //     responseJson.department,
-    //     responseJson.salary,
-    //     responseJson.email,
-    //     responseJson.employeeNumber
-    // );
 }
