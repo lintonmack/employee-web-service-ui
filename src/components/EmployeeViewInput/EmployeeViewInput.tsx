@@ -9,6 +9,8 @@ export const EmployeeViewInput: React.FC<{editMode: boolean, attribute: string, 
             </label>
             <div className="mt-2 sm:col-span-2 sm:mt-0">
                 <input
+                    type="text"
+                    data-testid={props.attribute}
                     disabled={!props.editMode}
                     value={props.value}
                     {...props.register(props.attribute)}
